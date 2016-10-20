@@ -22,11 +22,11 @@ def altrange(start, end, steps):
 def interpolate(points):
     def lagrange(x):
         acc = 0
-        for p_i in points:
-            mult_acc = p_i.fx
-            for p_k in points:
-                if p_k.x != p_i.x:
-                    mult_acc *= (x-p_k.x)/(p_i.x-p_k.x)
+        for i in points:
+            mult_acc = i.fx
+            for k in points:
+                if k.x != i.x:
+                    mult_acc *= (x-k.x)/(i.x-k.x)
             acc += mult_acc
         return acc
     return lagrange
